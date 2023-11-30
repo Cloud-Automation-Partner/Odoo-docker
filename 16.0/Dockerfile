@@ -64,6 +64,12 @@ RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ bullseye-pgdg main' > /et
     && rm -f /etc/apt/sources.list.d/pgdg.list \
     && rm -rf /var/lib/apt/lists/*
 
+# Install OpenHRMS dependencies
+
+RUN pip3 install --upgrade pip && \
+    pip3 install pandas  # Add any other necessary packages here
+
+
 # Install rtlcss (on Debian buster)
 RUN npm install -g rtlcss
 
